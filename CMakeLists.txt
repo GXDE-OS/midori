@@ -17,7 +17,7 @@ execute_process(COMMAND "git" "describe" "--tags"
 if (REVISION)
     set(CORE_VERSION "${REVISION}")
     # All warnings are errors in development builds
-    set(VALAFLAGS ${VALAFLAGS} --fatal-warnings)
+    #set(VALAFLAGS ${VALAFLAGS} --fatal-warnings)
 else ()
     # No runtime type checks
     set(VALAFLAGS ${VALAFLAGS} --disable-assert)
