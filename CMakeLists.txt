@@ -10,14 +10,14 @@ set(PROJECT_BUGS https://github.com/midori-browser/core/issues)
 set(PROJECT_WEBSITE https://www.midori-browser.org)
 set(CORE_VERSION 7.0)
 
-execute_process(COMMAND "git" "describe" "--tags"
-                OUTPUT_VARIABLE REVISION
-                ERROR_QUIET
-                OUTPUT_STRIP_TRAILING_WHITESPACE)
+#execute_process(COMMAND "git" "describe" "--tags"
+#                OUTPUT_VARIABLE REVISION
+#                ERROR_QUIET
+#                OUTPUT_STRIP_TRAILING_WHITESPACE)
 if (REVISION)
     set(CORE_VERSION "${REVISION}")
     # All warnings are errors in development builds
-    #set(VALAFLAGS ${VALAFLAGS} --fatal-warnings)
+    set(VALAFLAGS ${VALAFLAGS} --fatal-warnings)
 else ()
     # No runtime type checks
     set(VALAFLAGS ${VALAFLAGS} --disable-assert)
